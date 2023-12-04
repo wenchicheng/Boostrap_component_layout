@@ -7,8 +7,40 @@
   <title>Boostrap_component_layout</title>
   <link rel="stylesheet" href="./css/bootstrap.css">
   <style>
-    /* #carouselExampleIndicators {
-      height: 100vh;
+    body {
+      background-color: rgb(240, 240, 240);
+    }
+
+    #section03 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #section03 p {
+      font-size: 24px;
+    }
+
+    @media (max-width: 599px) {
+      .google-maps {
+        position: relative;
+        padding-bottom: 75%;
+        /* 此為地圖長寬比 */
+        height: 0;
+        overflow: hidden;
+      }
+
+      .google-maps iframe {
+        position: absolute;
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
+
+    /* #footer img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
     } */
   </style>
 </head>
@@ -94,8 +126,8 @@
   <div id="section02">
     <div class="container">
       <div class="row mt-5">
-        <div class="col">
-          <div class="card h-100" style="width: 18rem;">
+        <div class="col-sm-12 col-md-4 mb-4">
+          <div class="card h-100">
             <img src="https://www.starbucks.com.tw/common/objects/images/product/20231020165238565.jpg"
               class="card-img-top">
             <div class="card-body">
@@ -104,8 +136,8 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100" style="width: 18rem;">
+        <div class="col-sm-12 col-md-4 mb-4">
+          <div class="card h-100">
             <img src="https://www.starbucks.com.tw/common/objects/images/product/20231020165338857.jpg"
               class="card-img-top">
             <div class="card-body">
@@ -114,8 +146,8 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100" style="width: 18rem;">
+        <div class="col-sm-12 col-md-4 mb-4">
+          <div class="card h-100">
             <img src="https://www.starbucks.com.tw/common/objects/images/product/20231020165505252.jpg"
               class="card-img-top">
             <div class="card-body">
@@ -130,26 +162,51 @@
 
 
   <!-- 形象圖------------------------------>
+  <div id="section03">
+    <div class="row m-0">
+      <div class="col-sm-12 col-lg-6 p-0 ">
+        <img src="https://www.starbucks.com.tw/coffee/objects/images/catalog/banner_espresso.jpg">
+      </div>
+      <div class="col-sm-12 col-lg-6 text-center p-5 m-auto">
+        <!-- 在框內垂直置中可用 m-auto -->
+        <h2>典藏咖啡</h2>
+        <p>我們周遊列國，搜羅最出色的咖啡豆。在這個過程中，我們發掘到珍貴獨特的咖啡豆，迫不及待想將它們帶回來，與大家分享。每批數量不多的咖啡豆都有獨一無二的故事；而我們為每種咖啡豆精心研發專屬的烘焙方式。</p>
+        <button type="button" class="btn btn-success">More</button>
+      </div>
+    </div>
+    <div class="row m-0">
+      <div class="col-sm-12 col-lg-6 text-center p-5 m-auto">
+        <h2>道德採購</h2>
+        <p>對星巴克而言，道德採購不僅僅是跟供應商購買咖啡。我們一直努力幫助支持優質、透明且公平的交易。我們堅持從源頭保證品質，並重新投資到種植咖啡的人們和社區中。</p>
+        <button type="button" class="btn btn-success">More</button>
+      </div>
+      <div class="col-sm-12 col-lg-6 order-first order-lg-last p-0">
+        <img src="https://www.starbucks.com.tw/coffee/objects/images/catalog/banner_espresso.jpg">
+      </div>
+    </div>
+  </div>
 
   <!-- 地圖-------------------------------->
+
   <div id="section04">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30742.2374100477!2d121.4325297632414!3d25.053556318881355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a62a1adbc0e3%3A0xe222844a2a557d38!2z5paw6I6K5Ymv6YO95b-D!5e0!3m2!1szh-TW!2stw!4v1701674328520!5m2!1szh-TW!2stw"
-      width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+      class="google-map w-100" style="border:0;" allowfullscreen="" loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
+
   <!-- 聯絡我們---------------------------->
   <div id="section05">
     <div class="container">
-      <div class="text-center mt-5 mb-2">
+      <div class="text-center  mt-5 mb-2">
         <h2>聯絡我們</h2>
         <h5>泰山莊園咖啡，傳承熱情 coding 精神</h5>
-        <p>歡迎您的蒞臨</p>
+        <h6>歡迎您的蒞臨</h6>
       </div>
       <form>
 
         <div class="container">
-          <div class="row">
+          <div class="row flex-column">
 
             <div class="col">
               <label for="name" class="form-label">姓名</label>
@@ -171,29 +228,53 @@
                 <option value="2">合作建議</option>
                 <option value="3">連鎖加盟</option>
               </select>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">訂閱最新資訊</label>
+              </div>
             </div>
           </div>
-
         </div>
-
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">訂閱最新資訊</label>
+        <div class="text-center ">
+          <button type="submit" class="btn btn-secondary m-5">送出</button>
         </div>
-        <div class="col">
-          <button type="submit" class="btn btn-primary">送出</button>
-        </div>
-
       </form>
     </div>
   </div>
+
   <!-- 表尾------------------------------->
-  <div id="footer">
-    <div class="row">
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
-      <div class="col"></div>
+  <div id="footer" class="bg-dark p-5" style="color: white; font-size: 16px;">
+    <div class="row ">
+      <div class="col-6 col-md-3">
+        <img style="width: 200px;height: 200px;" class="rounded-circle" src="https://picsum.photos/200/200/?random=10">
+      </div>
+      <div class="col-6 col-md-3">
+        <p style="font-weight: bold;">Links</p>
+        <p>
+          Lorem ipsum <br>
+          Lorem ipsum,jg, <br>
+          Lorem ipsum,jb,b, <br>
+        </p>
+      </div>
+      <div class="col-6 col-md-3">
+        <p style="font-weight: bold;">Lisdbfgfch</p>
+        <p>
+          Lorem ipsum <br>
+          Lorem ipsumgdfgs <br>
+          Lorem ipsum gs<br>
+        </p>
+      </div>
+      <div class="col-6 col-md-3">
+        <p style="font-weight: bold;">Lfhchchc</p>
+        <p>
+          Lorem ipsumvxdgdss <br>
+          Lorem ipsumgdggd <br>
+          Lorem ipsumggsg <br>
+        </p>
+      </div>
+    </div>
+    <div class="text-center">
+      @ Lorem ipsum dolor sit amet consectetur.
     </div>
   </div>
 
