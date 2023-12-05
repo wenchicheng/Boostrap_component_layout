@@ -11,6 +11,39 @@
       background-color: rgb(240, 240, 240);
     }
 
+    #carouselExampleCaptions .carousel-item img {
+      object-fit: cover;
+    }
+
+    @media(min-width:576px) {
+      #carouselExampleCaptions {
+        height: calc(40vh + 10vw);
+        /*在視窗 576~991 時 (10vh固定數值 + 10vw 隨著視窗慢慢變大) */
+      }
+
+      #carouselExampleCaptions .carousel {
+        height: 100%;
+      }
+
+      #carouselExampleCaptions .carousel-inner {
+        height: 100%;
+      }
+
+      #carouselExampleCaptions .carousel-item {
+        height: 100%;
+      }
+
+      #carouselExampleCaptions .carousel-item img {
+        height: 100%;
+      }
+    }
+
+    @media(min-width:992px) {
+      #carouselExampleCaptions {
+        height: 100vh;
+      }
+    }
+
     #section03 img {
       width: 100%;
       height: 100%;
@@ -21,21 +54,24 @@
       font-size: 24px;
     }
 
-    @media (max-width: 599px) {
-      .google-maps {
-        position: relative;
-        padding-bottom: 75%;
-        /* 此為地圖長寬比 */
-        height: 0;
-        overflow: hidden;
+    .google-map {
+      height: 500px;
+      width: 100%;
+    }
+
+    @media (min-width: 992px) {
+      #section04 {
+        height: 100vh;
       }
 
-      .google-maps iframe {
-        position: absolute;
-        width: 100% !important;
-        height: 100% !important;
+      .google-map {
+        /* 此為地圖長寬比 */
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
       }
     }
+
 
     /* #footer img {
       width: 200px;
@@ -191,7 +227,7 @@
   <div id="section04">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30742.2374100477!2d121.4325297632414!3d25.053556318881355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a62a1adbc0e3%3A0xe222844a2a557d38!2z5paw6I6K5Ymv6YO95b-D!5e0!3m2!1szh-TW!2stw!4v1701674328520!5m2!1szh-TW!2stw"
-      class="google-map w-100" style="border:0;" allowfullscreen="" loading="lazy"
+      class="google-map" style="border:0;" allowfullscreen="" loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 
@@ -207,32 +243,49 @@
 
         <div class="container">
           <div class="row flex-column">
-
-            <div class="col">
+            <!-- 姓名 -->
+            <div class="col col-lg-6 mb-4">
               <label for="name" class="form-label">姓名</label>
-              <input type="name" class="form-control" id="name">
+              <div class="input-group">
+                <input type="text" class="form-control">
+                <div class="input-group-text">
+                  先生&nbsp;<input class="form-check-input mt-0" type="radio" value="男">&nbsp;
+                  女士&nbsp;<input class="form-check-input mt-0" type="radio" value="女">
+                </div>
+              </div>
+              <!-- <input type="name" class="form-control" id="name"> -->
             </div>
-            <div class="col">
-              <label for="name" class="form-label">電話</label>
-              <input type="email" class="form-control" id="name">
+            <!-- 電話 -->
+            <div class="col col-lg-6 mb-4">
+              <label for="phone" class="form-label">電話</label>
+              <input type="phone" class="form-control" id="phone">
             </div>
-
-            <div class="col">
+            <!-- 郵箱 -->
+            <div class="col col-lg-6 mb-4">
               <label for="email" class="form-label">電子信箱</label>
               <input type="email" class="form-control" id="email">
             </div>
-            <div class="col">
-              <label for="email" class="form-label">問題類型</label>
+            <!-- 問題 -->
+            <div class="col col-lg-6 mb-4">
+              <label for="question" class="form-label">問題類型</label>
               <select class="form-select ">
                 <option value="1" selected>餐飲建議</option>
                 <option value="2">合作建議</option>
                 <option value="3">連鎖加盟</option>
               </select>
-              <div class="mb-3 form-check">
+            </div>
+            <!-- 意見 -->
+            <div class="col">
+              <label for="email" class="form-label">意見需求</label>
+              <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+              <!-- <input type="email" class="form-control" id="email"> -->
+              <!-- 勾選 -->
+              <div class="mt-4 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">訂閱最新資訊</label>
               </div>
             </div>
+
           </div>
         </div>
         <div class="text-center ">
